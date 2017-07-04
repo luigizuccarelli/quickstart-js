@@ -75,11 +75,24 @@ limitations under the License.
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-<script src="/__/firebase/3.9.0/firebase-app.js"></script>
+<!-- <script src="/__/firebase/3.9.0/firebase-app.js"></script>
 <script src="/__/firebase/3.9.0/firebase-messaging.js"></script>
-<script src="/__/firebase/init.js"></script>
+<script src="/__/firebase/init.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
 
 <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC2r44LDBcY_sQqFQWXd4VGa-bzvtOgSrs",
+    authDomain: "lmz-test-3207e.firebaseapp.com",
+    databaseURL: "https://lmz-test-3207e.firebaseio.com",
+    projectId: "lmz-test-3207e",
+    storageBucket: "lmz-test-3207e.appspot.com",
+    messagingSenderId: "753083617426"
+  };
+  firebase.initializeApp(config);
+  
   // [START get_messaging_object]
   // Retrieve Firebase Messaging object.
   const messaging = firebase.messaging();
