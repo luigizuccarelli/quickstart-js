@@ -1,15 +1,16 @@
 // Import and configure the Firebase SDK
 // These scripts are made available when the app is served or deployed on Firebase Hosting
 // If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup
-importScripts('/__/firebase/3.9.0/firebase-app.js');
-importScripts('/__/firebase/3.9.0/firebase-messaging.js');
-importScripts('/__/firebase/init.js');
+//importScripts('/__/firebase/3.9.0/firebase-app.js');
+//importScripts('/__/firebase/3.9.0/firebase-messaging.js');
+//importScripts('/__/firebase/init.js');
 
-const messaging = firebase.messaging();
+//const messaging = firebase.messaging();
 
 /**
  * Here is is the code snippet to initialize Firebase Messaging in the Service
  * Worker when your app is not hosted on Firebase Hosting.
+ */
 
  // [START initialize_firebase_in_sw]
  // Give the service worker access to Firebase Messaging.
@@ -18,17 +19,25 @@ const messaging = firebase.messaging();
  importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js');
  importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js');
 
- // Initialize the Firebase app in the service worker by passing in the
- // messagingSenderId.
- firebase.initializeApp({
-   'messagingSenderId': 'YOUR-SENDER-ID'
- });
+
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC2r44LDBcY_sQqFQWXd4VGa-bzvtOgSrs",
+    authDomain: "lmz-test-3207e.firebaseapp.com",
+    databaseURL: "https://lmz-test-3207e.firebaseio.com",
+    projectId: "lmz-test-3207e",
+    storageBucket: "lmz-test-3207e.appspot.com",
+    messagingSenderId: "753083617426"
+  };
+  firebase.initializeApp(config);
+  
+
 
  // Retrieve an instance of Firebase Messaging so that it can handle background
  // messages.
  const messaging = firebase.messaging();
  // [END initialize_firebase_in_sw]
- **/
+
 
 
 // If you would like to customize notifications that are received in the
